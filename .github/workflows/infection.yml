@@ -37,6 +37,9 @@ jobs:
           key: ${{ runner.os }}-composer-${{ matrix.php-versions }}-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-${{ matrix.php-versions }}-
 
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist
+
       - name: Alias jsonmapper base branch to version 4.4.x
         run: composer config extra.branch-alias.dev-infection 4.4.x-dev
 
