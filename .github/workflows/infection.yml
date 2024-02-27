@@ -11,8 +11,8 @@ jobs:
     strategy:
       matrix:
         php-versions:
-          - '8.2'
-          - '8.3'
+          - '7.4'
+          - '8.0'
 
     name: using PHP ${{ matrix.php-versions }}
     steps:
