@@ -594,7 +594,7 @@ class JsonMapper
                 $annotations = static::parseAnnotations($docblock);
 
                 if (!isset($annotations['var'][0])) {
-                    if (PHP_VERSION_ID >= 80000 && $rprop->hasType()
+                    if (PHP_VERSION_ID >= 80000 && !$rprop->hasType()
                         && isset($annotations['param'])
                     ) {
                         foreach ($annotations['param'] as $param) {
